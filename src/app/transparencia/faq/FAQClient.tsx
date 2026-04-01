@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { HelpCircle, ChevronDown, ChevronUp, Search, MessageCircle, FileText, Lock, Clock } from 'lucide-react';
 import PageHeader from '@/components/layout/PageHeader';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './FAQ.module.css';
 
 const FAQ_DATA = [
@@ -121,6 +122,8 @@ export default function FAQClient() {
                 <p>Toda informação pública solicitada através do portal é fornecida de forma <strong>totalmente gratuita</strong>.</p>
             </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

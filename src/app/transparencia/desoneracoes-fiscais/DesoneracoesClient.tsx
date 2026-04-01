@@ -9,6 +9,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Desoneracoes.module.css';
 
 type Desoneracao = {
@@ -163,6 +164,8 @@ export default function DesoneracoesClient() {
             <p>Conforme o Art. 14 da Lei de Responsabilidade Fiscal (LC 101/2000), toda renúncia de receita deve vir acompanhada de estimativa do impacto orçamentário-financeiro e demonstração de que a medida não afetará as metas de resultados fiscais.</p>
           </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

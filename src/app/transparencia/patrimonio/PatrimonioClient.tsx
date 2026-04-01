@@ -8,6 +8,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Patrimonio.module.css';
 
 type Veiculo = {
@@ -111,7 +112,7 @@ export default function PatrimonioClient() {
     <div className={styles.moduleWrapper}>
       <PageHeader
         title="Patrimônio e Frota"
-        description="Consulte a relação completa de bens imóveis, veículos oficiais e equipamentos pertencentes ao patrimônio do município (Art. 94 da Lei 4.320/64)."
+        description="Consulte a relação completa de bens imóveis, veículos oficiais e equipamentos pertencentes ao patrimônio do município."
         breadcrumbs={breadcrumbs}
       />
 
@@ -119,42 +120,33 @@ export default function PatrimonioClient() {
         
         {/* 4-Stat Dashboard */}
         <div className={styles.statsRow}>
-          <div className={styles.statCard} style={{ '--accent': '#3b82f6' } as React.CSSProperties}>
+          <div className={styles.statCard} style={{ '--accent': '#3b82f6' } as any}>
             <div className={styles.statIcon} style={{ color: '#3b82f6' }}><Building2 size={20} /></div>
             <div className={styles.statInfo}>
               <strong className={styles.statVal}>{MOCK_IMOVEIS.length}</strong>
               <span className={styles.statLabel}>Bens Imóveis</span>
             </div>
           </div>
-          <div className={styles.statCard} style={{ '--accent': '#10b981' } as React.CSSProperties}>
+          <div className={styles.statCard} style={{ '--accent': '#10b981' } as any}>
             <div className={styles.statIcon} style={{ color: '#10b981' }}><Car size={20} /></div>
             <div className={styles.statInfo}>
               <strong className={styles.statVal}>{MOCK_FROTA.filter(v => v.status === 'Ativo').length}</strong>
               <span className={styles.statLabel}>Frota Ativa</span>
             </div>
           </div>
-          <div className={styles.statCard} style={{ '--accent': '#f59e0b' } as React.CSSProperties}>
+          <div className={styles.statCard} style={{ '--accent': '#f59e0b' } as any}>
             <div className={styles.statIcon} style={{ color: '#f59e0b' }}><Landmark size={20} /></div>
             <div className={styles.statInfo}>
               <strong className={styles.statVal}>R$ 4.8M</strong>
               <span className={styles.statLabel}>Valor Estimado</span>
             </div>
           </div>
-          <div className={styles.statCard} style={{ '--accent': '#ef4444' } as React.CSSProperties}>
+          <div className={styles.statCard} style={{ '--accent': '#ef4444' } as any}>
             <div className={styles.statIcon} style={{ color: '#ef4444' }}><ShieldCheck size={20} /></div>
             <div className={styles.statInfo}>
               <strong className={styles.statVal}>OK</strong>
               <span className={styles.statLabel}>Meta Lei 4.320</span>
             </div>
-          </div>
-        </div>
-
-        {/* Compliance Warning */}
-        <div className={styles.complianceBox}>
-          <Info size={24} className={styles.complianceIcon} />
-          <div className={styles.complianceText}>
-            <strong>Transparência Ativa – Bens Públicos</strong>
-            <p>O inventário do patrimônio público assegura o controle social sobre o uso dos prédios e veículos oficiais. Todos os bens de uso comum, especial ou dominicais devem estar registrados aqui.</p>
           </div>
         </div>
 
@@ -165,7 +157,7 @@ export default function PatrimonioClient() {
             onClick={() => { setActiveTab('IMOVEIS'); setBusca(''); }}
           >
             <Building2 size={20} />
-            Bens Imóveis (Prédios/Terrenos)
+            Bens Imóveis
           </button>
           <button 
             className={`${styles.tabBtn} ${activeTab === 'FROTA' ? styles.active : ''}`}
@@ -192,7 +184,7 @@ export default function PatrimonioClient() {
         {/* Lists */}
         {activeTab === 'IMOVEIS' ? (
           <div className={styles.listGrid}>
-            {imoveisFiltrados.length > 0 ? imoveisFiltrados.map(imovel => (
+            {imoveisFiltrados.map(imovel => (
               <div key={imovel.id} className={styles.assetCard}>
                 <div className={styles.cardTop}>
                   <Building size={24} className={styles.assetIcon} />
@@ -209,55 +201,38 @@ export default function PatrimonioClient() {
                     <span className={styles.label}>Órgão Responsável</span>
                     <strong>{imovel.orgao}</strong>
                   </div>
-                  <div className={styles.infoBlock}>
-                    <span className={styles.label}>Finalidade</span>
-                    <p>{imovel.finalidade}</p>
-                  </div>
                 </div>
               </div>
-            )) : (
-              <div className={styles.emptyState}>Nenhum imóvel encontrado.</div>
-            )}
+            ))}
           </div>
         ) : (
           <div className={styles.listGrid}>
-            {frotaFiltrada.length > 0 ? frotaFiltrada.map(veiculo => (
+            {frotaFiltrada.map(veiculo => (
               <div key={veiculo.id} className={styles.assetCard}>
                 <div className={styles.cardTop}>
                   <div className={styles.vehicleIcon}>
                     {getCarIcon(veiculo.tipo)}
                   </div>
-                  <span className={`${styles.statusBadge} ${
-                    veiculo.status === 'Ativo' ? styles.bgGreen :
-                    veiculo.status === 'Manutenção' ? styles.bgYellow : styles.bgRed
-                  }`}>
+                  <span className={`${styles.statusBadge} ${veiculo.status === 'Ativo' ? styles.bgGreen : styles.bgRed}`}>
                     {veiculo.status}
                   </span>
                 </div>
                 <div className={styles.cardBody}>
                   <h3>{veiculo.tipo}</h3>
-                  
                   <div className={styles.plateRow}>
                     <Hash size={16} /> <span className={styles.plate}>{veiculo.placa}</span>
-                    <span className={styles.yearDot}>•</span>
-                    <span className={styles.year}>{veiculo.ano}</span>
                   </div>
-
                   <div className={styles.infoBlock}>
                     <span className={styles.label}>Vinculação</span>
                     <strong>{veiculo.orgao}</strong>
                   </div>
-                  <div className={styles.infoBlock}>
-                    <span className={styles.label}>Uso / Destinação</span>
-                    <p>{veiculo.uso}</p>
-                  </div>
                 </div>
               </div>
-            )) : (
-              <div className={styles.emptyState}>Nenhum veículo encontrado com os filtros atuais.</div>
-            )}
+            ))}
           </div>
         )}
+
+        <BannerPNTP />
 
       </div>
     </div>

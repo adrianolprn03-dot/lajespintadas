@@ -8,6 +8,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Licitacoes.module.css';
 
 
@@ -201,6 +202,8 @@ export default function LicitacoesClient() {
             </table>
           </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

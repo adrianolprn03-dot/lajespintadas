@@ -11,6 +11,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Receitas.module.css';
 
 // Mock Data structure
@@ -300,6 +301,8 @@ export default function ReceitasClient() {
             )}
           </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

@@ -5,6 +5,7 @@ import { UserCheck, Building2, Search, Download, AlertCircle, FileText } from 'l
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Terceirizados.module.css';
 
 type Terceirizado = {
@@ -112,10 +113,8 @@ export default function TerceirizadosPage() {
           </div>
         </div>
 
-        <div className={styles.legalInfo}>
-          <AlertCircle size={20} />
-          <p>Esta listagem atende à obrigatoriedade de transparência sobre postos de trabalho e contratos de terceirização (LAI 12.527/2011).</p>
-        </div>
+        <BannerPNTP />
+
       </div>
     </div>
   );

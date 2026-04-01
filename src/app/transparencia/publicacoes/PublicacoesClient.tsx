@@ -6,6 +6,7 @@ import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
 import { LEGISLACAO_MOCK } from '@/lib/legislacaoMock';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Publicacoes.module.css';
 
 // Mock Data keeping the same structure as old implementation
@@ -203,6 +204,8 @@ export default function PublicacoesClient() {
             })
           )}
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

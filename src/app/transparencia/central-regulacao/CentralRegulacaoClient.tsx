@@ -6,6 +6,7 @@ import { ActivitySquare, Stethoscope, TestTube, Cross, Ambulance, Info, Phone, E
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Central.module.css';
 
 const FILAS = [
@@ -213,6 +214,8 @@ export default function CentralRegulacaoClient() {
             </Link>
           </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

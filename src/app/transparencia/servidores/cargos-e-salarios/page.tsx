@@ -8,6 +8,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Cargos.module.css';
 
 type Cargo = {
@@ -131,6 +132,9 @@ export default function CargosSalariosPage() {
             <p><strong>Atenção:</strong> Os valores exibidos referem-se ao vencimento base (salário base). Vantagens temporárias, adicionais de tempo de serviço, gratificações de função e produtividade podem ser consultadas individualmente na <strong>Folha de Pagamento</strong>.</p>
           </div>
         </div>
+
+        <BannerPNTP />
+
       </div>
     </div>
   );

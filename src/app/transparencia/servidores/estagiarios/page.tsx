@@ -5,6 +5,7 @@ import { GraduationCap, School, Search, Download, Info, Landmark } from 'lucide-
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Estagiarios.module.css';
 
 type Estagiario = {
@@ -109,10 +110,8 @@ export default function EstagiariosPage() {
           )}
         </div>
 
-        <div className={styles.infoFooter}>
-          <Info size={20} />
-          <p>O estágio na administração pública é regido pela Lei Federal nº 11.788/2008.</p>
-        </div>
+        <BannerPNTP />
+
       </div>
     </div>
   );

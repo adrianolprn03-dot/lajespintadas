@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Book, Search, ChevronRight, Hash, Info, HelpCircle, ShieldAlert } from 'lucide-react';
 import PageHeader from '@/components/layout/PageHeader';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Glossario.module.css';
 
 const GLOSSARIO_TERMS = [
@@ -97,6 +98,8 @@ export default function GlossarioClient() {
                 <p>A publicação de um glossário com linguagem cidadã é um requisito mandatório do Programa Nacional de Transparência Pública para garantir que qualquer cidadão compreenda as contas públicas sem necessidade de conhecimento técnico prévio.</p>
             </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

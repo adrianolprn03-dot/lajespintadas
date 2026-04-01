@@ -14,7 +14,12 @@ import {
   Award,
   ChevronRight,
   HelpCircle,
-  Book
+  Book,
+  HeartPulse,
+  ShieldCheck,
+  Scale,
+  MessageSquare,
+  FileCheck
 } from 'lucide-react';
 
 const transparencyCategories = [
@@ -23,10 +28,21 @@ const transparencyCategories = [
     icon: <Award size={24} className={styles.categoryIcon} />,
     colorClass: styles.catHighlight,
     modules: [
-      { name: "Central de Regulação", icon: <ActivitySquare size={20} />, href: "/transparencia/central-regulacao", desc: "Fila de espera do SUS, exames e consultas." },
       { name: "Ordem Cronológica", icon: <Clock size={20} />, href: "/transparencia/ordem-cronologica", desc: "Fila de pagamentos de credores e fornecedores." },
+      { name: "Atas de Registro", icon: <FileBox size={20} />, href: "/transparencia/atas-registro", desc: "Preços registrados para futuras compras." },
       { name: "Desonerações Fiscais", icon: <Receipt size={20} />, href: "/transparencia/desoneracoes-fiscais", desc: "Isenções, anistias e benefícios tributários." },
-      { name: "Atas de Registro", icon: <FileBox size={20} />, href: "/transparencia/atas-registro", desc: "Preços registrados para futuras compras." }
+      { name: "Radar da Transparência", icon: <ActivitySquare size={20} />, href: "/transparencia/radar", desc: "Posição do município no ranking nacional." }
+    ]
+  },
+  {
+    title: "Legislação e Atos Oficiais",
+    icon: <Scale size={24} className={styles.categoryIcon} />,
+    colorClass: styles.catHighlight,
+    modules: [
+      { name: "Leis Municipais", icon: <Scale size={20} />, href: "/transparencia/leis", desc: "Leis Ordinárias, Complementares e Orgânica." },
+      { name: "Decretos Executivos", icon: <FileCheck size={20} />, href: "/transparencia/decretos", desc: "Atos normativos assinados pelo Prefeito." },
+      { name: "Portarias", icon: <FileBox size={20} />, href: "/transparencia/portarias", desc: "Atos administrativos de gestão interna." },
+      { name: "Publicações Legais", icon: <Book size={20} />, href: "/transparencia/publicacoes", desc: "Editais e diários oficiais publicados." }
     ]
   },
   {
@@ -41,36 +57,46 @@ const transparencyCategories = [
     ]
   },
   {
-    title: "Planejamento e Gestão (LRF)",
-    icon: <FileBox size={24} className={styles.categoryIcon} />,
-    colorClass: styles.catBudget,
+    title: "Saúde Pública",
+    icon: <HeartPulse size={24} className={styles.categoryIcon} />,
+    colorClass: styles.catPeople,
     modules: [
-      { name: "Relatórios LRF", icon: <FileBox size={20} />, href: "/transparencia/lrf", desc: "Relatórios RGF e RREO (Gestão Fiscal)." },
-      { name: "Orçamento (LDO/LOA)", icon: <Landmark size={20} />, href: "/transparencia/orcamento", desc: "PPA, LDO e LOA (Planejamento Anual)." },
-      { name: "Prestação de Contas", icon: <Award size={20} />, href: "/transparencia/prestacao-contas", desc: "Contas anuais do Prefeito e do Município." },
-      { name: "Dados Abertos", icon: <ActivitySquare size={20} />, href: "/transparencia/dados-abertos", desc: "Arquivos estruturados para livre uso." }
+      { name: "Medicamentos SUS", icon: <HeartPulse size={20} />, href: "/transparencia/saude/medicamentos", desc: "Estoque e relação de remédios (REMUME)." },
+      { name: "Unidades de Saúde", icon: <Building2 size={20} />, href: "/transparencia/saude/unidades", desc: "UBS, Hospital e pontos de atendimento." },
+      { name: "Fila de Espera (Regulação)", icon: <ActivitySquare size={20} />, href: "/transparencia/central-regulacao", desc: "Consultas e exames da rede municipal." }
     ]
   },
   {
-    title: "Recursos Humanos & Cidadania",
+    title: "Cidadania e Participação",
+    icon: <MessageSquare size={24} className={styles.categoryIcon} />,
+    colorClass: styles.catHighlight,
+    modules: [
+      { name: "e-SIC (Info)", icon: <HelpCircle size={20} />, href: "/e-sic", desc: "Pedido de Acesso à Informação (Lei 12.527)." },
+      { name: "Ouvidoria", icon: <MessageSquare size={20} />, href: "/ouvidoria", desc: "Elogios, denúncias e reclamações formais." },
+      { name: "Proteção de Dados (LGPD)", icon: <ShieldCheck size={20} />, href: "/lgpd", desc: "Direitos e privacidade do cidadão." },
+      { name: "Conselhos Municipais", icon: <Users size={20} />, href: "/transparencia/conselhos", desc: "Participação popular na gestão pública." }
+    ]
+  },
+  {
+    title: "Recursos Humanos e Gestão",
     icon: <Users size={24} className={styles.categoryIcon} />,
     colorClass: styles.catPeople,
     modules: [
       { name: "Servidores Públicos", icon: <Users size={20} />, href: "/transparencia/servidores", desc: "Folha de pagamento, cargos e salários." },
       { name: "Diárias e Passagens", icon: <Building2 size={20} />, href: "/transparencia/diarias", desc: "Gastos com servidores em viagem a serviço." },
-      { name: "Incentivos Culturais", icon: <Award size={20} />, href: "/transparencia/incentivos", desc: "Recursos para cultura (Lei Paulo Gustavo)." },
-      { name: "Obras Públicas", icon: <Landmark size={20} />, href: "/transparencia/obras", desc: "Andamento, fotos e medições de obras." },
-      { name: "Conselhos Municipais", icon: <Users size={20} />, href: "/transparencia/conselhos", desc: "Composição e atas dos conselhos de gestão." }
+      { name: "Concursos e Seleções", icon: <Users size={20} />, href: "/transparencia/concursos", desc: "Editais e resultados de processos seletivos." },
+      { name: "Obras Públicas", icon: <Landmark size={20} />, href: "/transparencia/obras", desc: "Fiscalização e andamento de obras." }
     ]
   },
   {
-    title: "Transparência Ativa e Apoio",
-    icon: <HelpCircle size={24} className={styles.categoryIcon} />,
-    colorClass: styles.catHighlight,
+    title: "Planejamento e LRF",
+    icon: <FileBox size={24} className={styles.categoryIcon} />,
+    colorClass: styles.catBudget,
     modules: [
-      { name: "Glossário", icon: <Book size={20} />, href: "/transparencia/glossario", desc: "Dicionário de termos técnicos e financeiros." },
-      { name: "Dúvidas Frequentes", icon: <HelpCircle size={20} />, href: "/transparencia/faq", desc: "Respostas rápidas para as principais dúvidas." },
-      { name: "Radar Nacional", icon: <ActivitySquare size={20} />, href: "/transparencia/radar", desc: "Posição do município no ranking nacional." }
+      { name: "Relatórios LRF", icon: <FileBox size={20} />, href: "/transparencia/lrf", desc: "Relatórios RGF e RREO periódicos." },
+      { name: "Orçamento (LDO/LOA)", icon: <Landmark size={20} />, href: "/transparencia/orcamento", desc: "PPA, LDO e LOA vigentes." },
+      { name: "Patrimônio e Frota", icon: <Building2 size={20} />, href: "/transparencia/patrimonio", desc: "Bens imóveis e veículos municipais." },
+      { name: "Dados Abertos", icon: <ActivitySquare size={20} />, href: "/transparencia/dados-abertos", desc: "Arquivos para download estruturado." }
     ]
   }
 ];
@@ -84,7 +110,7 @@ export default function TransparenciaHub() {
     <div className={styles.transparencyPage}>
       <PageHeader 
         title="Portal da Transparência" 
-        description="Acompanhe em tempo real a execução fiscal e orçamentária do município. Aqui você encontra dados abertos sobre receitas, despesas, contratos e servidores, garantindo o seu direito de acesso à informação (Lei nº 12.527/2011)."
+        description="Portal oficial de acesso à informação. Navegue pelas categorias para acompanhar a legalidade, a economia e os serviços públicos de Lajes Pintadas."
         breadcrumbs={breadcrumbs}
       />
 
@@ -93,27 +119,28 @@ export default function TransparenciaHub() {
         {/* Superior Panel: PNTP Seal & Global Search */}
         <div className={styles.panelRow}>
           <div className={styles.searchPanel}>
-            <h2>O que você procura?</h2>
+            <h2>Busca de Dados</h2>
             <div className={styles.searchContainer}>
               <Search className={styles.searchIcon} size={20} />
-              <input type="text" placeholder="Buscar por portarias, licitações, despesas..." />
-              <button className={styles.searchBtn}>Localizar</button>
+              <input type="text" placeholder="Leis, licitações, despesas, nomes de servidores..." />
+              <button className={styles.searchBtn}>Buscar</button>
             </div>
             <div className={styles.quickTags}>
-              <span>Sugestões:</span> 
-              <Link href="/transparencia/ordem-cronologica">pagamentos</Link>
-              <Link href="#">diárias</Link>
-              <Link href="#">contratos</Link>
+              <span>Acessos Rápidos:</span> 
+              <Link href="/transparencia/leis">Leis</Link>
+              <Link href="/transparencia/receitas">Receitas</Link>
+              <Link href="/transparencia/licitacoes">Licitações</Link>
+              <Link href="/transparencia/servidores">Servidores</Link>
             </div>
           </div>
           
           <div className={styles.sealPanel}>
             <div className={styles.sealBadge}>
               <Award size={28} />
-              <span>Transparência Integrada</span>
+              <span>Nível Ouro/Diamante</span>
             </div>
-            <h3>Selo Diamante PNTP</h3>
-            <p>O Portal da Transparência de Lajes Pintadas atende a **100% dos requisitos** do Programa Nacional de Transparência Pública (PNTP).</p>
+            <h3>Selo PNTP 2025</h3>
+            <p>O Portal da Transparência de Lajes Pintadas atende a **100% dos requisitos** do Programa Nacional de Transparência Pública.</p>
             <a href="https://radar.tce.mt.gov.br/extensao/radar-da-transparencia-publica" target="_blank" rel="noopener noreferrer" className={styles.radarLink}>Ver no Radar Nacional <ChevronRight size={16}/></a>
           </div>
         </div>

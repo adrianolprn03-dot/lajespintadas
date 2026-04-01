@@ -9,6 +9,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Incentivos.module.css';
 
 type Incentivo = {
@@ -174,14 +175,7 @@ export default function IncentivosClient() {
           )}
         </div>
 
-        {/* PNTP Legend Banner */}
-        <div className={styles.pntpBanner}>
-           <div className={styles.bannerIcon}><Award size={32} /></div>
-           <div className={styles.bannerText}>
-              <h4>Transparência no Fomento Cultural</h4>
-              <p>Conforme os requisitos do PNTP 2025, o município deve dar ampla publicidade à aplicação das leis de incentivo federal (Paulo Gustavo e Aldir Blanc) e aos convênios locais de fomento ao esporte.</p>
-           </div>
-        </div>
+        <BannerPNTP />
 
       </div>
     </div>

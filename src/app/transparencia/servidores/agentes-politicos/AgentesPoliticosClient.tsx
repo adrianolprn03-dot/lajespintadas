@@ -8,6 +8,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Agentes.module.css';
 
 type AgentePolitico = {
@@ -137,6 +138,8 @@ export default function AgentesPoliticosClient() {
             <p>Os subsídios e as remunerações obedecem ao teto constitucional e são fixados pelo Poder Legislativo para cada legislatura, em observância ao Art. 29, inciso V da Constituição Federal e à Lei de Responsabilidade Fiscal (LC 101/2000).</p>
           </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

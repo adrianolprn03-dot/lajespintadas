@@ -9,6 +9,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './FolhaPagamento.module.css';
 
 type ServidorFolha = {
@@ -217,6 +218,8 @@ export default function FolhaPagamentoClient() {
             </table>
           </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

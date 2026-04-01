@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './DadosAbertos.module.css';
 
 type Dataset = {
@@ -171,6 +172,8 @@ export default function DadosAbertosClient() {
            <BarChart size={24} />
            <p>Qualquer cidadão pode consumir estes dados via requisições diretas em formato JSON. Transparência é um direito do povo.</p>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

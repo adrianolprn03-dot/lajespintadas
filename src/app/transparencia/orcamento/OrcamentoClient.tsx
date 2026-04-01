@@ -8,6 +8,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Orcamento.module.css';
 
 type DocumentoOrcamentario = {
@@ -145,6 +146,8 @@ export default function OrcamentoClient() {
             </div>
           )}
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

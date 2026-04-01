@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Activity, Star, ShieldAlert, Info, ExternalLink, BarChart3, CheckCircle2 } from 'lucide-react';
 import PageHeader from '@/components/layout/PageHeader';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Radar.module.css';
 
 export const metadata: Metadata = {
@@ -171,6 +172,8 @@ export default function RadarPage() {
             </div>
           ))}
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>

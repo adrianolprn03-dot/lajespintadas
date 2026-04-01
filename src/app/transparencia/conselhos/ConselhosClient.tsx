@@ -8,6 +8,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './Conselhos.module.css';
 
 type Conselho = {
@@ -273,6 +274,8 @@ export default function ConselhosClient() {
             )}
           </div>
         )}
+
+        <BannerPNTP />
 
       </div>
     </div>

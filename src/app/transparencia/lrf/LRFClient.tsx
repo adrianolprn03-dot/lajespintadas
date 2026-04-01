@@ -9,6 +9,7 @@ import {
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import BannerPNTP from '@/components/transparencia/BannerPNTP';
 import styles from './LRF.module.css';
 
 type RelatorioFiscal = {
@@ -156,6 +157,8 @@ export default function LRFClient() {
             <p>O RREO e o RGF são instrumentos essenciais para a transparência da gestão fiscal, permitindo à sociedade acompanhar os gastos com pessoal, dívida pública e o cumprimento das metas orçamentárias.</p>
           </div>
         </div>
+
+        <BannerPNTP />
 
       </div>
     </div>
