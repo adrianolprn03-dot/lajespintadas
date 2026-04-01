@@ -6,15 +6,13 @@ import { NOTICIAS_MOCK } from '@/lib/noticiasMock';
 import styles from './Materia.module.css';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
-// For Next.js v15 App Router compatibility where params is a promise:
-// type Props = { params: Promise<{ slug: string }> }; 
-// but we will keep synchronous params assuming next < 15 or bypass if it warns.
 
 // Server-side meta tag generator
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const noticia = NOTICIAS_MOCK.find(n => n.slug === params.slug);
+  const { slug } = await params;
+  const noticia = NOTICIAS_MOCK.find(n => n.slug === slug);
   
   if (!noticia) return { title: 'Notícia Não Encontrada' };
   
@@ -35,8 +33,9 @@ function formatDataPT(dataStr: string) {
   });
 }
 
-export default function MateriaPage({ params }: Props) {
-  const noticia = NOTICIAS_MOCK.find(n => n.slug === params.slug);
+export default async function MateriaPage({ params }: Props) {
+  const { slug } = await params;
+  const noticia = NOTICIAS_MOCK.find(n => n.slug === slug);
 
   if (!noticia) {
     notFound();
