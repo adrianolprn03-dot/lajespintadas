@@ -5,6 +5,7 @@ import { FileText, Download, Calendar, Tag, Search, FileSignature } from 'lucide
 import PageHeader from '@/components/layout/PageHeader';
 import TransparencyFilters from '@/components/transparencia/TransparencyFilters';
 import { exportToCSV, exportToJSON, exportToPDF } from '@/lib/exportUtils';
+import { LEGISLACAO_MOCK } from '@/lib/legislacaoMock';
 import styles from './Publicacoes.module.css';
 
 // Mock Data keeping the same structure as old implementation
@@ -20,17 +21,20 @@ type Publicacao = {
 };
 
 const TIPOS = [
-  "Diário Oficial", "Edital", "Aviso", "Resultado", 
-  "Extrato de Contrato", "Convênio", "Portaria", "Resolução"
+  "Lei", "Decreto", "Portaria", "Diário Oficial", "Edital", "Aviso", "Resultado", 
+  "Extrato de Contrato", "Convênio", "Resolução"
 ];
 
-const MOCK_PUBLICACOES: Publicacao[] = [
-  { id: "1", titulo: "Diário Oficial nº 001", tipo: "Diário Oficial", descricao: "Publicação oficial dos atos administrativos de Janeiro.", dataPublicacao: "2026-01-31", ano: 2026, secretaria: "Administração", arquivo: null },
-  { id: "2", titulo: "Aviso de Licitação – Pregão Eletrônico 006", tipo: "Aviso", descricao: "Abertura de certame para aquisição de material de construção.", dataPublicacao: "2026-02-10", ano: 2026, secretaria: "Compras", arquivo: null },
-  { id: "3", titulo: "Resultado – Concorrência 001/2026", tipo: "Resultado", descricao: "Julgamento da obra de ampliação da escola municipal.", dataPublicacao: "2026-02-20", ano: 2026, secretaria: "Obras", arquivo: null },
-  { id: "4", titulo: "Extrato – Contrato 015/2026", tipo: "Extrato de Contrato", descricao: "Extrato do contrato com empresa terceirizada de limpeza.", dataPublicacao: "2026-03-05", ano: 2026, secretaria: "Administração", arquivo: null },
-  { id: "5", titulo: "Termo Fomento – Esporte Vida", tipo: "Convênio", descricao: "Repasse de fomento para a associação atlética municipal.", dataPublicacao: "2026-03-12", ano: 2026, secretaria: "Esportes", arquivo: null },
-];
+const MOCK_PUBLICACOES: Publicacao[] = LEGISLACAO_MOCK.map(l => ({
+  id: l.id,
+  titulo: `${l.tipo} nº ${l.identificador}`,
+  tipo: l.tipo,
+  descricao: l.titulo,
+  dataPublicacao: l.dataPublicacao,
+  ano: l.exercicio,
+  secretaria: l.tipo === "Portaria" ? "Recursos Humanos" : "Gabinete do Prefeito",
+  arquivo: l.pdfUrl || null
+}));
 
 export default function PublicacoesClient() {
   const [busca, setBusca] = useState("");
@@ -151,9 +155,9 @@ export default function PublicacoesClient() {
               // Get color class based on document type
               let tagColorClass = styles.tagGray;
               if (pub.tipo === "Diário Oficial") tagColorClass = styles.tagBlue;
-              if (pub.tipo === "Edital" || pub.tipo === "Aviso") tagColorClass = styles.tagPurple;
-              if (pub.tipo === "Resultado" || pub.tipo === "Convênio") tagColorClass = styles.tagGreen;
-              if (pub.tipo === "Extrato de Contrato") tagColorClass = styles.tagOrange;
+              if (pub.tipo === "Edital" || pub.tipo === "Aviso" || pub.tipo === "Lei") tagColorClass = styles.tagPurple;
+              if (pub.tipo === "Resultado" || pub.tipo === "Convênio" || pub.tipo === "Portaria") tagColorClass = styles.tagGreen;
+              if (pub.tipo === "Extrato de Contrato" || pub.tipo === "Decreto") tagColorClass = styles.tagOrange;
 
               return (
                 <article key={pub.id} className={styles.docCard}>

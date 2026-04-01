@@ -123,7 +123,14 @@ export default function Home() {
           
           <div className={styles.newsGrid}>
             <Link href={`/noticias/${mainNews.slug}`} className={styles.mainNews}>
-              <div className={styles.newsImgPlaceholder}>
+              <div 
+                className={styles.newsImgPlaceholder} 
+                style={{ 
+                  backgroundImage: `url(${mainNews.imagemCapa})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
                 <span className={styles.categoryBadge}>{mainNews.secretaria}</span>
               </div>
               <div className={styles.newsBody}>
@@ -136,7 +143,14 @@ export default function Home() {
             <div className={styles.smallNewsList}>
               {otherNews.map((noticia) => (
                 <Link key={noticia.id} href={`/noticias/${noticia.slug}`} className={styles.smallNewsCard}>
-                  <div className={styles.smallNewsImg}></div>
+                  <div 
+                    className={styles.smallNewsImg}
+                    style={{ 
+                      backgroundImage: `url(${noticia.imagemCapa})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  ></div>
                   <div className={styles.smallNewsContent}>
                     <span className={styles.newsDate}>{formatDataPT(noticia.dataPublicacao)}</span>
                     <h4>{noticia.titulo}</h4>

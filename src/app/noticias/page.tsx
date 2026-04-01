@@ -31,7 +31,14 @@ export default function NoticiasList() {
         <div className={styles.newsGrid}>
           {NOTICIAS_MOCK.map((noticia) => (
             <Link href={`/noticias/${noticia.slug}`} key={noticia.id} className={styles.newsCard}>
-              <div className={styles.cardCover}>
+              <div 
+                className={styles.cardCover}
+                style={{ 
+                  backgroundImage: `url(${noticia.imagemCapa})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
                 <div className={styles.imagePlaceholder}>
                   {/* Visual ID for the secretarias/category */}
                   <span>Lajes Pintadas • {noticia.secretaria}</span>

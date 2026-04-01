@@ -75,8 +75,18 @@ export default function MateriaPage({ params }: Props) {
 
       {/* Featured Display */}
       <div className={`container ${styles.imageContainer}`}>
-        <div className={styles.imagePlaceholder}>
-          <span>Lajes Pintadas • Oficial</span>
+        <div 
+          className={styles.imagePlaceholder}
+          style={{ 
+            backgroundImage: `url(${noticia.imagemCapa})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            position: 'relative',
+            height: '450px',
+            borderRadius: 'var(--radius-lg)',
+            overflow: 'hidden'
+          }}
+        >
           <div className={styles.shareBtnWrap}>
             <button className={styles.shareBtn} title="Compartilhar">
               <Share2 size={18} /> Compartilhar
