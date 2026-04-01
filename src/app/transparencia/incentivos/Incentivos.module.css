@@ -1,0 +1,265 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 6rem;
+}
+
+/* Dashboard de Estatísticas (Novo Padrão) */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.statCard:hover { transform: translateY(-4px); }
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background-color: var(--accent);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo { display: flex; flex-direction: column; gap: 0.1rem; }
+
+.statVal {
+  font-size: 1.25rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.customSelect {
+  flex: 1;
+  min-width: 220px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.customSelect:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+
+.incentivosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.incentivoCard {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.incentivoCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.cardHeader {
+  padding: 1.75rem 2rem;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.typeBadge {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  padding: 0.35rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.yearTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.cardBody {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.cardBody h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.beneficiarioBox {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.beneficiarioLabel {
+  font-size: 0.7rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.beneficiarioName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.cardFooter {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+}
+
+.amountLabel {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.amountVal {
+  font-size: 1.15rem;
+  color: #ec4899;
+  font-weight: 800;
+}
+
+.btnDoc {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnDoc:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  padding: 5rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.pntpBanner {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 24px;
+  color: white;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bannerIcon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ec4899;
+}
+
+.bannerText h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.bannerText p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}

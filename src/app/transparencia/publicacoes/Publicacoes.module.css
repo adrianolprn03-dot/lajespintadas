@@ -1,0 +1,284 @@
+.moduleWrapper {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 6rem;
+}
+
+/* Custom Select Dropdown injected into TransparencyFilters */
+.customSelect {
+  flex: 1;
+  min-width: 200px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.customSelect:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(10, 61, 109, 0.1);
+}
+
+/* Summary Dashboard */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.sumCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.sumCard::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; height: 100%; width: 5px;
+}
+
+.scBlue::after { background-color: #3b82f6; }
+.scGreen::after { background-color: #10b981; }
+.scPurple::after { background-color: #8b5cf6; }
+
+.sumLabel {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.sumValue {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+.scBlue .sumValue { color: #2563eb; }
+.scGreen .sumValue { color: #059669; }
+.scPurple .sumValue { color: #7c3aed; }
+
+/* Document List Array */
+.documentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.docCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.docCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(10, 61, 109, 0.15);
+}
+
+.docIconWrapper {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(10, 61, 109, 0.05);
+  border: 1px solid rgba(10, 61, 109, 0.1);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-normal);
+}
+
+.docIcon {
+  color: var(--color-primary);
+}
+
+.docCard:hover .docIconWrapper {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.docCard:hover .docIcon {
+  color: white;
+}
+
+.docDetails {
+  flex: 1;
+}
+
+.docHeaderTags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.docTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid currentColor;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Glassy Official Tags */
+.tagGray { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+.tagBlue { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
+.tagPurple { background: #fdf4ff; color: #c026d3; border-color: #f5d0fe; }
+.tagGreen { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
+.tagOrange { background: #fff7ed; color: #ea580c; border-color: #fed7aa; }
+
+.docDate {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.docDept {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-background);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.docTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+  transition: color var(--transition-fast);
+}
+
+.docCard:hover .docTitle {
+  color: var(--color-primary);
+}
+
+.docDesc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Action Details */
+.docAction {
+  flex-shrink: 0;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.downloadBtn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(10, 61, 109, 0.2);
+}
+
+/* Empty State */
+.emptyState {
+  background-color: white;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emptyIcon {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
+
+.emptyState h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.clearBtn {
+  background-color: var(--color-border);
+  color: var(--color-text-primary);
+  border: none;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .summaryGrid { grid-template-columns: repeat(2, 1fr); }
+  .docCard { flex-direction: column; align-items: stretch; text-align: center; gap: 1rem; }
+  .docIconWrapper { margin: 0 auto; }
+  .docHeaderTags { justify-content: center; }
+  .docAction { margin-top: 1rem; display: flex; justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .summaryGrid { grid-template-columns: 1fr; }
+  .customSelect { width: 100%; }
+}

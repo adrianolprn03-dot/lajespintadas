@@ -1,0 +1,69 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: var(--color-text-inverse);
+  padding: 3rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbs a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-text-inverse);
+  text-decoration: underline;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.current {
+  color: var(--color-secondary-light);
+  font-weight: 500;
+}
+
+.headerContent {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-inverse);
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 2rem 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+}

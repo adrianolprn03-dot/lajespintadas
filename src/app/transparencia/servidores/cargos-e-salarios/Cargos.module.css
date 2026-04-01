@@ -1,0 +1,115 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.tableTableArea {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.customTable th {
+  background: #f8fafc;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  color: #64748b;
+  border-bottom: 1px solid #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.customTable td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.cargoInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #1e293b;
+}
+
+.nivelBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.vagasBox {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.vagasBox strong {
+  color: #1e293b;
+}
+
+.btnAction {
+  background: #f1f5f9;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btnAction:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.empty {
+  padding: 3rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.noteBox {
+  display: flex;
+  gap: 1.5rem;
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  padding: 1.5rem;
+  border-radius: 16px;
+  color: #b45309;
+  align-items: flex-start;
+}
+
+.noteText p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}

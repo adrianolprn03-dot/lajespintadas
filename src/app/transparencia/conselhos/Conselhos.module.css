@@ -1,0 +1,471 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 6rem;
+}
+
+/* Dashboard de Estatísticas (Novo Padrão) */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.statCard:hover { transform: translateY(-4px); }
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background-color: var(--accent);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo { display: flex; flex-direction: column; gap: 0.1rem; }
+
+.statVal {
+  font-size: 1.25rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Selector Bar */
+.selectorBar {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.selectorLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dropdownContainer {
+  position: relative;
+  flex-grow: 1;
+}
+
+.dropdownBtn {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropdownBtn:hover {
+  background: white;
+  border-color: #94a3b8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.selectedView {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectedTexts {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.selectedTexts strong {
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.selectedTexts span {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.chevron {
+  color: #64748b;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.menuItem:hover {
+  background: #f1f5f9;
+}
+
+.itemActive {
+  background: #eff6ff !important;
+}
+
+.itemActive strong {
+  color: #2563eb;
+}
+
+.iconCircleSmall {
+  color: #2563eb;
+  background: white;
+  padding: 0.35rem;
+  border-radius: 6px;
+  border: 1px solid #bfdbfe;
+}
+
+/* Compliance Box */
+.complianceBox {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: white;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.15);
+}
+
+.complianceIcon {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.complianceTexts h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.complianceTexts p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.complianceTexts strong {
+  color: #38bdf8;
+}
+
+/* Local Tabs */
+.tabsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.tabBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tabBtn:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.tabActive {
+  background: white !important;
+  color: #2563eb !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Members Grid */
+.listGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.memberCard {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+.memberCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  border-color: #cbd5e1;
+}
+
+.memberTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roleTag {
+  background: #fefce8;
+  color: #ca8a04;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.4rem 0.85rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+}
+
+.memberBody h3 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.infoLine {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #f8fafc;
+  padding: 0.85rem;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.infoLine span {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.infoLine strong, .infoLine p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+/* Atas List */
+.docsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.docRow {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.docRow:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.docMain {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.docIcon {
+  width: 54px;
+  height: 54px;
+  background: #fff7ed;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.docTexts h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.docMetas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.docBadge {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+}
+
+.docDate {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.btnDownload {
+  background: transparent;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnDownload:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  background: white;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .selectorBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .docRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  .docMain {
+    align-items: flex-start;
+  }
+  .btnDownload {
+    justify-content: center;
+  }
+}

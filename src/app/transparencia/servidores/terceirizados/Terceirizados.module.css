@@ -1,0 +1,93 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.tableBlock {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.customTable th {
+  background: #f8fafc;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  color: #64748b;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.customTable td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.userName {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.empSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.funBadge {
+  background: #f1f5f9;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.dateCell {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.empty {
+  padding: 4rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.legalInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  padding: 1.25rem;
+  border-radius: 12px;
+  color: #059669;
+  font-size: 0.875rem;
+}

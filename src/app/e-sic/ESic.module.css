@@ -1,0 +1,398 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================
+   Dashboard de Estatísticas
+   ========================================= */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background-color: var(--accent);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.statVal {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* =========================================
+   Abas / Tabs
+   ========================================= */
+.tabsContainer {
+  display: flex;
+  gap: 0.5rem;
+  background-color: #f1f5f9;
+  padding: 0.4rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tabActive {
+  background: white;
+  color: var(--color-primary-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   Layout do Formulário
+   ========================================= */
+.formLayout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.formColumn {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.backLink:hover { color: #3b82f6; }
+
+.formSection {
+  margin-bottom: 3rem;
+}
+
+.formSection:last-child { margin-bottom: 0; }
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  background: #1e293b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.sectionHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+}
+
+.identityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* =========================================
+   Aba de Consulta de Protocolo
+   ========================================= */
+.trackSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.trackHero {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+}
+
+.trackHeroIcon {
+  color: #3b82f6;
+  margin-bottom: 1.25rem;
+}
+
+.trackHero h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.trackHero p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.trackForm {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.trackInput {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.trackInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.trackBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  white-space: nowrap;
+}
+
+.trackBtn:hover { background: #2563eb; }
+
+.trackInstructions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: #f0fdf4;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  color: #064e3b;
+}
+
+/* =========================================
+   Coluna de Informações (Sidebar)
+   ========================================= */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.laiWidget {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+}
+
+.laiHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  color: #0369a1;
+}
+
+.laiHeader h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+}
+
+.laiWidget p {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.laiList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.laiList li {
+  font-size: 0.8rem;
+  color: #64748b;
+  display: flex;
+  gap: 0.75rem;
+  line-height: 1.5;
+  align-items: flex-start;
+}
+
+.checkIcon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.deadlineWidget {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.deadlineItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.deadlineItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.deadlineItem strong {
+  font-size: 0.8rem;
+  color: var(--color-primary-dark);
+}
+
+.deadlineItem span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.helpWidget {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.helpIcon { color: #3b82f6; flex-shrink: 0; }
+
+.sicForm { display: flex; flex-direction: column; }
+
+/* =========================================
+   Responsivo
+   ========================================= */
+@media (max-width: 1200px) {
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .formLayout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+  .tabsContainer { width: 100%; }
+  .tab { flex: 1; justify-content: center; }
+  .formColumn { padding: 1.5rem; }
+  .trackForm { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .statsRow { grid-template-columns: 1fr; }
+}

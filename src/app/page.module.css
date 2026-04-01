@@ -1,0 +1,471 @@
+/* Base Layout */
+.page {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.sectionDesc {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* 1. Hero Banner Premium (Clone da Referência) */
+.hero {
+  position: relative;
+  min-height: 85vh; /* Alta ocupação de tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Imagem de Fundo c/ Gradiente Teal */
+  background: 
+    linear-gradient(to bottom, 
+      rgba(1, 100, 150, 0.7) 0%, 
+      rgba(1, 176, 239, 0.45) 50%, 
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url('/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  padding: 6rem 0 12rem 0; /* padding bottom extra p/ os cards flutuarem */
+}
+
+/* Container de Centralização */
+.heroContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Selo "PORTAL OFICIAL DA CIDADE" */
+.heroBadgeTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.dotYellow {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-secondary); /* Amarelo */
+}
+
+/* Título e Subtítulo */
+.heroTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-secondary); /* Amarelo Lajes Pintadas */
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.95;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Barra de Pesquisa */
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.searchBar {
+  display: flex;
+  background: white;
+  padding: 0.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.searchBar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  outline: none;
+  font-family: inherit;
+}
+
+.searchBar input::placeholder {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.searchBar button {
+  background: var(--color-primary); /* Cyan */
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  border: none;
+  cursor: pointer;
+  margin: 0.25rem;
+}
+
+.searchBar button:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Sub Selos */
+.subBadges {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.subBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.dotGreen {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10B981; /* Verde Ativo */
+}
+
+/* Rótulo SERVIÇOS OFICIAIS */
+.servicesLabel {
+  font-size: 0.875rem;
+  font-weight: 900;
+  color: var(--color-secondary);
+  letter-spacing: 0.15em;
+  margin-bottom: -1rem; /* Aproxima os cards */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. Cartões Flutuantes (Overlapping Hero) */
+.servicesSection {
+  background-color: transparent;
+  margin-top: -10rem; /* Pull cards up over the hero */
+  position: relative;
+  z-index: 20;
+  padding-bottom: 6rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exatamente 4 colunas */
+  gap: 1.5rem;
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 32px;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Decorative colored top border effect based on image */
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: transparent; /* Changed dynamically on hover or via child logic */
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Cores Táticas dos Ícones/Cartões da Imagem */
+.iconCyan { background: rgba(1, 176, 239, 0.1); color: var(--color-primary); }
+.iconGreen { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+.iconOrange { background: rgba(245, 158, 11, 0.1); color: #F59E0B; }
+.iconPurple { background: rgba(139, 92, 246, 0.1); color: #8B5CF6; }
+
+.textCyan { color: var(--color-primary); }
+.textGreen { color: #10B981; }
+.textOrange { color: #F59E0B; }
+.textPurple { color: #8B5CF6; }
+
+.serviceCard h3 {
+  font-size: 1.05rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.serviceCard p {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-weight: 500;
+  flex: 1; /* Empurra o Acessar p/ baixo */
+  margin-bottom: 2rem;
+}
+
+.acessarLink {
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.serviceCard:hover .acessarLink {
+  opacity: 1;
+}
+
+/* 3. News Section (Ajustado p/ encaixar com fundo branco do hero) */
+.newsSection {
+  background-color: var(--color-background);
+  padding: 4rem 0 8rem 0;
+}
+
+.viewAll {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: gap 0.2s;
+  text-transform: uppercase;
+}
+
+.viewAll:hover {
+  gap: 0.75rem;
+  color: var(--color-primary-dark);
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+}
+
+.mainNews {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.mainNews:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.newsImgPlaceholder {
+  height: 400px;
+  background: linear-gradient(135deg, hsl(196, 50%, 80%) 0%, var(--color-primary) 100%);
+  position: relative;
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: var(--color-glass-surface);
+  backdrop-filter: blur(8px);
+  color: var(--color-text-primary);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-md);
+}
+
+.newsBody {
+  padding: 3rem;
+}
+
+.newsDate {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.mainNews h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+}
+
+.mainNews p {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.smallNewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.smallNewsCard {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.smallNewsCard:hover {
+  background: var(--color-surface);
+  transform: translateX(8px);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.smallNewsImg {
+  width: 140px;
+  height: 110px;
+  border-radius: var(--radius-md);
+  background: var(--color-border);
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+
+.smallNewsCard:hover .smallNewsImg {
+  transform: scale(1.05);
+}
+
+.smallNewsContent h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .newsGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  .servicesSection {
+    margin-top: -6rem;
+  }
+}

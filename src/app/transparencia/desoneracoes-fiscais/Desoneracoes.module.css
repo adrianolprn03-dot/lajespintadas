@@ -1,0 +1,236 @@
+.moduleWrapper {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 6rem;
+}
+
+/* Dashboard de Estatísticas (Novo Padrão) */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.statCard:hover { transform: translateY(-4px); }
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background-color: var(--accent);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo { display: flex; flex-direction: column; gap: 0.1rem; }
+
+.statVal {
+  font-size: 1.25rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.benefitCard {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+.benefitCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.cardTop {
+  padding: 2rem;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.typeBadge {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  padding: 0.35rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.statusTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cardBody {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.cardBody h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.legalSection {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.legalText {
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+.legalText strong {
+  color: #1e293b;
+}
+
+.cardFooter {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.impact {
+  display: flex;
+  flex-direction: column;
+}
+
+.impactLabel {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.impactVal {
+  font-size: 1.1rem;
+  color: #ef4444;
+  font-weight: 800;
+}
+
+.btnDoc {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.complianceLegend {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 24px;
+  color: white;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.legendIcon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legendText h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.legendText p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .complianceLegend {
+    flex-direction: column;
+    text-align: center;
+  }
+}

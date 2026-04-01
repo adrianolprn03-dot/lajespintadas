@@ -1,0 +1,254 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 6rem;
+}
+
+/* Dashboard de Estatísticas (Novo Padrão) */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.statCard:hover { transform: translateY(-4px); }
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background-color: var(--accent);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo { display: flex; flex-direction: column; gap: 0.1rem; }
+
+.statVal {
+  font-size: 1.25rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+
+.complianceBox {
+  background: #fff8f1;
+  border: 1px solid #fed7aa;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.complianceIcon {
+  color: #ea580c;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.complianceText strong {
+  display: block;
+  color: #9a3412;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.complianceText p {
+  margin: 0;
+  color: #c2410c;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.statIcon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.listItem {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+.listItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.itemHeader {
+  padding: 1.5rem 2rem 1rem;
+  display: flex;
+}
+
+.categoryBadge {
+  background: rgba(234, 88, 12, 0.1);
+  color: #ea580c;
+  padding: 0.4rem 1rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.itemBody {
+  padding: 0 2rem 1.5rem;
+  flex-grow: 1;
+}
+
+.itemBody h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.15rem;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.legalInfo {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legalInfo span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.legalInfo strong {
+  color: #334155;
+  font-family: monospace;
+}
+
+.itemFooter {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #f1f5f9;
+  background: #fafafa;
+}
+
+.valueBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.valueBox span {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.valueBox strong {
+  font-size: 1.5rem;
+  color: #ea580c;
+  font-weight: 800;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  background: white;
+  border-radius: 20px;
+  color: #64748b;
+  font-weight: 500;
+}

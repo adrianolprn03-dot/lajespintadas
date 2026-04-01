@@ -1,0 +1,214 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.complianceNote {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.complianceIcon {
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.complianceText h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.complianceText p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.siBlue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.siEmerald { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.siAmber { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.statValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Table Area */
+.tableSection {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.folhaTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.folhaTable th {
+  background: #f8fafc;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+
+.folhaTable td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.servidorCell {
+  display: flex;
+  flex-direction: column;
+}
+
+.servidorName {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.servidorCpf {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.cargoCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cargoTitle {
+  color: #475569;
+  font-weight: 500;
+}
+
+.secLabel {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.moneyCell {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.liquidValue {
+  color: #059669;
+  font-weight: 700;
+}
+
+.btnDetail {
+  background: #f1f5f9;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.btnDetail:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.emptyState {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .folhaTable th:nth-child(4),
+  .folhaTable td:nth-child(4),
+  .folhaTable th:nth-child(5),
+  .folhaTable td:nth-child(5) {
+    display: none;
+  }
+}

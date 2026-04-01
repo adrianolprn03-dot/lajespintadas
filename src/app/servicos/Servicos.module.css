@@ -1,0 +1,254 @@
+.moduleWrapper {
+  padding-bottom: 5rem;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.introBox {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.introIcon {
+  width: 64px;
+  height: 64px;
+  background: #f0f9ff;
+  color: #0284c7;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introText h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #1e293b;
+}
+
+.introText p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.filterSection {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.25rem;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  color: #64748b;
+  transition: border-color 0.2s;
+}
+
+.searchWrap:focus-within {
+  border-color: #3b82f6;
+  background: white;
+}
+
+.searchWrap input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.catWrap {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.catBtn, .catBtnActive {
+  padding: 0.6rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1.5px solid #e2e8f0;
+}
+
+.catBtn {
+  background: white;
+  color: #64748b;
+}
+
+.catBtnActive {
+  background: #1e293b;
+  border-color: #1e293b;
+  color: white;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 28px;
+  border: 1px solid #f1f5f9;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border-color: #3b82f633;
+}
+
+.cardHeader {
+  margin-bottom: 2rem;
+}
+
+.catBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.servName {
+  font-size: 1.35rem;
+  color: #1e293b;
+  font-weight: 800;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.servDesc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.servDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.detailItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.detailItem svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.iconLoc { color: #f59e0b; }
+.iconTime { color: #10b981; }
+.iconDoc { color: #3b82f6; }
+
+.detailText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.detailText span {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.detailText strong {
+  font-size: 0.875rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.cardFooter {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.5rem;
+}
+
+.btnAcessar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3b82f6;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.btnAcessar:hover {
+  color: #1d4ed8;
+  gap: 1rem;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  padding: 5rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.feedbackSection {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: #f8fafc;
+  border-radius: 24px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.feedbackSection a {
+  color: #3b82f6;
+  font-weight: 700;
+  text-decoration: none;
+}

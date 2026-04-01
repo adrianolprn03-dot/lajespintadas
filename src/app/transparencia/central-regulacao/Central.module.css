@@ -1,0 +1,524 @@
+.moduleWrapper {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 6rem;
+}
+
+/* Dashboard de Estatísticas (Novo Padrão) */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.statCard:hover { transform: translateY(-4px); }
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background-color: var(--accent);
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo { display: flex; flex-direction: column; gap: 0.1rem; }
+
+.statVal {
+  font-size: 1.25rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Compliance Alert */
+.complianceMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: #f0fdfa;
+  border: 1px solid #99f6e4;
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.complianceIcon {
+  color: #0d9488;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.complianceLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #0f766e;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.complianceText p {
+  color: #115e59;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Queues Grid */
+.queuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.queueCard {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.queueCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 6px;
+}
+
+.cardBlue::before { background: linear-gradient(90deg, #3b82f6, #6366f1); }
+.cardBlue .iconWrapper { background: linear-gradient(135deg, #3b82f6, #4f46e5); }
+
+.cardTeal::before { background: linear-gradient(90deg, #14b8a6, #059669); }
+.cardTeal .iconWrapper { background: linear-gradient(135deg, #14b8a6, #059669); }
+
+.cardPurple::before { background: linear-gradient(90deg, #a855f7, #7c3aed); }
+.cardPurple .iconWrapper { background: linear-gradient(135deg, #a855f7, #7c3aed); }
+
+.cardRed::before { background: linear-gradient(90deg, #f43f5e, #e11d48); }
+.cardRed .iconWrapper { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+
+.queueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+
+.iconWrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: white;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+.queueCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.cardHeader h2 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.metricBox {
+  background-color: var(--color-background);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.metricLabel {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.metricValue {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.metricSub {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
+}
+
+.proceduresBox {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.proceduresLabel {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.proceduresBox p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Detailed List */
+.detailsHeader {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-transform: uppercase;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.listItem {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.2s;
+}
+
+.listItem:hover {
+  transform: translateX(5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1;
+}
+
+.itemMain h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.itemMeta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.itemWait {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.itemWait span {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.itemWait strong {
+  font-size: 1.1rem;
+  color: #f59e0b;
+}
+
+.itemCount {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: right;
+}
+
+.itemCount span {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.itemCount strong {
+  font-size: 1.25rem;
+  color: #3b82f6;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  background: white;
+  padding: 4rem;
+  text-align: center;
+  border-radius: 16px;
+  color: #64748b;
+  font-weight: 500;
+  border: 1px dashed #cbd5e1;
+}
+
+.customSelect {
+  flex: 1;
+  min-width: 220px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.customSelect:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+/* Info Row */
+.infoRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.infoBlock {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.infoTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.infoIconMain {
+  color: #f43f5e;
+}
+
+.infoContent p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.infoContent p:last-child {
+  margin-bottom: 0;
+}
+
+.infoContent strong {
+  color: var(--color-text-primary);
+}
+
+/* Contact Block */
+.contactBlock {
+  background: linear-gradient(135deg, var(--color-primary-dark), #0f172a);
+  color: white;
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.contactItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.contactItem span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+}
+
+.contactItem p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.phoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  transition: opacity var(--transition-fast);
+}
+
+.phoneLink:hover {
+  opacity: 0.8;
+}
+
+.phoneIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.externalLink {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color var(--transition-fast);
+}
+
+.externalLink:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .queuesGrid {
+    grid-template-columns: 1fr;
+  }
+  .infoRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .listItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .itemCount {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+}

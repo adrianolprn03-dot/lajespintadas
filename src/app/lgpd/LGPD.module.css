@@ -1,0 +1,200 @@
+.moduleWrapper {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.contentContainer {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 6rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Top Info */
+.topInfo {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: var(--radius-3xl);
+  padding: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.badgeLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 950;
+  color: #1e40af;
+  background-color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.05);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.topText {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Sections Grid */
+.sectionsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.policyCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-3xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.policyCard:hover {
+  transform: translateX(10px);
+  border-color: #3b82f6;
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.iconWrap {
+  width: 56px; height: 56px;
+  background-color: #f8fafc;
+  color: #3b82f6;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.02em;
+}
+
+.mainDesc {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.subDetail {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  background-color: #f8fafc;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-2xl);
+  border-left: 5px solid #3b82f6;
+}
+
+/* Contact Card */
+.contactCard {
+  background-color: #1e293b;
+  border-radius: var(--radius-3xl);
+  padding: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  color: white;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+.contactIcon {
+  width: 80px; height: 80px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+}
+
+.contactInfo h4 {
+  font-size: 1.35rem;
+  font-weight: 950;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.contactInfo p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.emailBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  background-color: #3b82f6;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-xl);
+  font-weight: 900;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.emailBtn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Help Box */
+.helpBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background-color: #f8fafc;
+  padding: 2.5rem;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border);
+}
+
+.helpBox span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contactCard { flex-direction: column; text-align: center; padding: 2.5rem; }
+  .emailBtn { width: 100%; justify-content: center; }
+  .cardHeader { flex-direction: column; gap: 1rem; }
+}

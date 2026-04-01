@@ -1,0 +1,240 @@
+.hubWrapper {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.gridContainer {
+  margin-top: -4rem;
+  position: relative;
+  z-index: 20;
+  padding-bottom: 8rem;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--accent);
+}
+
+.statIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statVal {
+  font-size: 1.25rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.catCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-3xl);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.catCard::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; width: 100px; height: 100px;
+  background-color: currentColor;
+  opacity: 0.03;
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+  transition: transform 0.6s ease;
+}
+
+.catCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(10, 61, 109, 0.1);
+}
+
+.catCard:hover::before {
+  transform: translate(10%, -10%) scale(1.5);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.iconBox {
+  width: 56px; height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease;
+}
+
+.catCard:hover .iconBox {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.cardBadge {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.85rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+/* Card Body */
+.cardBody {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 950;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Card Footer */
+.cardFooter {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.clickLabel {
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #3b82f6;
+  letter-spacing: 0.05em;
+}
+
+.dotLine {
+  height: 2px;
+  flex: 1;
+  background-color: #eff6ff;
+  border-radius: var(--radius-full);
+  position: relative;
+}
+
+.dotLine::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; width: 0; height: 100%;
+  background-color: #3b82f6;
+  transition: width 0.4s ease;
+  border-radius: var(--radius-full);
+}
+
+.catCard:hover .dotLine::after {
+  width: 100%;
+}
+
+/* Info Banner */
+.infoBanner {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 2.5rem 3rem;
+  border-radius: var(--radius-2xl);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bannerIcon {
+  width: 50px; height: 50px;
+  background-color: white;
+  color: #2563eb;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.1);
+}
+
+.bannerText h4 {
+  font-size: 1.1rem;
+  font-weight: 950;
+  color: #1e3a8a;
+  margin-bottom: 0.35rem;
+}
+
+.bannerText p {
+  font-size: 0.95rem;
+  color: #3b82f6;
+  font-weight: 600;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .cardGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .cardGrid { grid-template-columns: 1fr; }
+  .gridContainer { margin-top: -2rem; padding-bottom: 4rem; }
+  .infoBanner { flex-direction: column; text-align: center; padding: 2rem; }
+  .catCard { padding: 2rem; }
+}
