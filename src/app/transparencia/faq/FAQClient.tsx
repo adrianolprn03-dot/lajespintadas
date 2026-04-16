@@ -12,7 +12,16 @@ const FAQ_DATA = [
     items: [
       { q: "Como faço para solicitar uma informação que não encontrei?", a: "Você deve utilizar o sistema e-SIC (Serviço de Informação ao Cidadão). O pedido pode ser feito online através do link 'e-SIC' no menu principal ou pessoalmente no setor de protocolo da Prefeitura." },
       { q: "Qual o prazo para receber uma resposta do e-SIC?", a: "De acordo com a Lei de Acesso à Informação (LAI), o prazo inicial é de 20 (vinte) dias, podendo ser prorrogado por mais 10 (dez) dias mediante justificativa expressa." },
-      { q: "Tenho que pagar para obter informações pelo portal?", a: "O acesso à informação é gratuito. A única exceção é o custeio de reprodução de documentos (cópias físicas ou mídias), quando solicitado pelo cidadão." }
+      { q: "Tenho que pagar para obter informações pelo portal?", a: "O acesso à informação é gratuito. A única exceção é o custeio de reprodução de documentos (cópias físicas ou mídias), quando solicitado pelo cidadão." },
+      { q: "O que é Transparência Ativa e Transparência Passiva?", a: "A Transparência Ativa é a disponibilização espontânea de dados pelo portal (ex: Folha de Pagamento). A Transparência Passiva é quando o cidadão precisa solicitar uma informação específica via e-SIC." }
+    ]
+  },
+  {
+    category: "Contas Públicas e Fiscal",
+    items: [
+      { q: "Onde encontro os Relatórios de Gestão Fiscal (RGF)?", a: "Eles estão disponíveis em Transparência > Planejamento e Contas > RGF. Os relatórios são publicados quadrimestralmente." },
+      { q: "Como acompanho a arrecadação do município em tempo real?", a: "Acesse Transparência > Receitas. Lá você encontrará o detalhamento das receitas correntes, tributárias e transferências recebidas diariamente." },
+      { q: "O que são as Despesas com Pessoal?", a: "Refere-se ao gasto total com salários, encargos e benefícios de servidores ativos, inativos e pensionistas, respeitando os limites da Lei de Responsabilidade Fiscal." }
     ]
   },
   {

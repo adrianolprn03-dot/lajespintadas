@@ -184,6 +184,12 @@
   text-transform: uppercase;
 }
 
+.typeTag[data-type*="Pix"] {
+  color: #0d9488;
+  background-color: #f0fdfa;
+  border: 1px solid #99f6e4;
+}
+
 .dot {
   width: 3px; height: 3px;
   background-color: var(--color-border);

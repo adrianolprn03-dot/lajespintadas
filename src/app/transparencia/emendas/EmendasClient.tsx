@@ -28,6 +28,7 @@ type Emenda = {
 const MOCK_EMENDAS: Emenda[] = [
   { id: "1", autor: "ROGÉRIO MARINHO", partido: "PL", tipo: "Emenda Individual", ano: 2026, valorPrevisto: 1200000.00, valorEmpenhado: 1200000.00, valorPago: 0, objeto: "Pavimentação asfáltica e drenagem de vias urbanas no Bairro Novo.", status: "Empenhada" },
   { id: "2", autor: "NATÁLIA BONAVIDES", partido: "PT", tipo: "Emenda de Bancada", ano: 2026, valorPrevisto: 850000.00, valorEmpenhado: 850000.00, valorPago: 850000.00, objeto: "Aquisição de equipamentos de saúde para o Centro de Especialidades.", status: "Paga" },
+  { id: "pix1", autor: "ADRIANO OLIVEIRA", partido: "IND", tipo: "Transferência Especial (Emenda Pix)", ano: 2026, valorPrevisto: 250000.00, valorEmpenhado: 250000.00, valorPago: 250000.00, objeto: "Custeio para ações de infraestrutura básica e saneamento (Recurso Direto).", status: "Paga" },
   { id: "3", autor: "GENERAL GIRÃO", partido: "PL", tipo: "Emenda de Relator (RP9)", ano: 2025, valorPrevisto: 500000.00, valorEmpenhado: 500000.00, valorPago: 500000.00, objeto: "Perfuração de poços artesianos na zona rural (Comunidade Malhada).", status: "Paga" },
   { id: "4", autor: "BENES LEOCÁDIO", partido: "UNIÃO", tipo: "Emenda Individual", ano: 2025, valorPrevisto: 300000.00, valorEmpenhado: 0, valorPago: 0, objeto: "Custeio para a área de assistência social - CRAS.", status: "Prevista" },
 ];
@@ -148,7 +149,7 @@ export default function EmendasClient() {
                       <div className={styles.parlamentarInfo}>
                          <h3>{emenda.autor}</h3>
                          <div className={styles.parlamentarMeta}>
-                            <span className={styles.typeTag}>{emenda.tipo}</span>
+                            <span className={styles.typeTag} data-type={emenda.tipo}>{emenda.tipo}</span>
                             <span className={styles.dot} />
                             <span className={styles.statusTag} data-status={emenda.status}>{emenda.status}</span>
                          </div>

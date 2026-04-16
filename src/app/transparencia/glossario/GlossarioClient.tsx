@@ -18,7 +18,10 @@ const GLOSSARIO_TERMS = [
   { term: "PPA", definition: "Plano Plurianual. Instrumento de planejamento de médio prazo que estabelece as diretrizes, objetivos e metas da administração pública para um período de 4 anos." },
   { term: "LAI", definition: "Lei de Acesso à Informação (Lei nº 12.527/2011). Regulamenta o direito constitucional de acesso dos cidadãos às informações públicas." },
   { term: "Receita Corrente Líquida", definition: "Somatório das receitas tributárias, de contribuições, patrimoniais, industriais, agropecuárias, de serviços, transferências correntes e outras receitas correntes." },
-  { term: "Restos a Pagar", definition: "Despesas empenhadas mas não pagas até o dia 31 de dezembro, distinguindo-se as processadas das não processadas." }
+  { term: "Restos a Pagar", definition: "Despesas empenhadas mas não pagas até o dia 31 de dezembro, distinguindo-se as processadas das não processadas." },
+  { term: "DCA", definition: "Declaração de Contas Anuais. Relatório que consolida as informações contábeis, orçamentárias e fiscais do município para órgãos de controle." },
+  { term: "Transferência Especial", definition: "Modalidade de emenda parlamentar (Emenda Pix) que possibilita o repasse direto de recursos da União para o município sem convênio prévio." },
+  { term: "Cronograma de Desembolso", definition: "Planejamento temporal dos pagamentos a serem efetuados pelo município conforme a disponibilidade financeira." }
 ].sort((a, b) => a.term.localeCompare(b.term));
 
 export default function GlossarioClient() {
